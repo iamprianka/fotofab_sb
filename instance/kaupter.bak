@@ -1,0 +1,36 @@
+# flask.cfg
+ 
+import os
+ 
+
+ 
+# grab the folder of the top-level directory of this project
+BASEDIR = os.path.abspath(os.path.dirname(__file__))
+TOP_LEVEL_DIR = os.path.abspath(os.curdir)
+ 
+# Update later by using a random number generator and moving
+# the actual key outside of the source code under version control
+DEBUG = True
+
+#platform specific details
+VERSION='1.2'
+
+#Platform config
+FIELD_MAP_DIR='./fieldmap/'
+
+#platform auth token
+TOKEN='S5Umpe7q0OXp9SE6mAg36Eu5Zmq27XF9XH0KA5p2'
+
+#salesforce details
+SALESFORCE_USERNAME='nex@dscoop.dev.intfin'
+SALESFORCE_PASSWORD='salesforce6'
+SALESFORCE_SECURITY_TOKEN='uoFwqpv8f639ZHLbVCQHLKBF7'
+SALESFORCE_SANDBOX=True
+
+SOLOMO_SF_USERNAME='admin@solomo.io.solopart'
+SOLOMO_SF_PASSWORD='salesforce1'
+SOLOMO_SF_SECURITY_TOKEN='2W8FIpfVQRIJLj93JcbAdDft'
+SOLOMO_SF_SANDBOX=True
+SOLOMO_SF_CLIENT_ID='0011N00001KIscbQAD'
+SOLOMO_OWNER_ID='0051N000005kre6QAA'
+SOLOMO_SUPPORT_RTYPE='0121N000001TIk9QAG'

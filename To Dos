@@ -1,0 +1,17 @@
+To Dos
+-Need to update the Type field on account with the types that come across from CrowdHub
+
+-What does Category map to?
+-How big can the Content Posted Description field be?  Is it plain text?
+-There is a lookup field called Model on Instaleld Presses that we cannot populate with the integration because it's not passed
+-Will individuals referenced in Profile Visits always exist in CrowdHub / Salesforce?
+	-Need reference to the contact.  Could possibly establish relationship by email
+	-Need to add process to initialize contacts to find a contact if it exists for establishing profile visits
+-Is the ID in profile visits for the profile visit record or for the contact?  If it's for the latter, can we get an id for the record?
+-What's the purpose of Companies on the Contact record?  Not mapping yet
+
+
+Fields/Objects to Add:
+-Add the CrowdHub URL field to prod
+-CrowdHub ID on installed presses
+-Add the Content Post object and associated fields

@@ -1,0 +1,48 @@
+{
+    "job_header":{
+        "title":"salesforce_to_ascent",
+        "version":"1.0",
+        "description":"this job pulls data from Salesforce to insert in to Ascent",
+        "change_history": {
+            "change": {
+                "date":"02/23/2019",
+                "change":"initial setup"
+            }
+        }
+    },
+    "accounts": {
+        "salesforce":"salesforce.json"
+    },
+    "fieldmap":"",
+    "query":"",
+    "sobject": {
+        "name":"Account",
+        "operation":"query",
+        "key":""
+    },
+    "rules": {
+      "BOOK_VALUE__C":""
+    },
+    "instructions": {
+        "query": {
+            "account":"salesforce",
+            "name":"accounts.sql",
+            "results":null
+        },
+        "custom":{
+            "file":"my_custom_lib",
+            "method":"test_method"
+        }
+    },
+    "logic_rules": {
+    },
+    "init": {
+        "recordtype":false
+    },
+    "dry-run": false,
+    "show-batch": false,
+    "show-response": false,
+    "limit":1000,
+    "offset":0,
+    "sandbox":"False"
+}

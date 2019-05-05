@@ -1,0 +1,4 @@
+#Id=return_none
+Email Opt In=get_bool
+Last Login Date=get_date
+company_id=generate_ch_exid

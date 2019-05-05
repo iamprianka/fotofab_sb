@@ -1,0 +1,16 @@
+#field map definition file
+#this file is in the same format as the data loader field map file
+
+#the field on the left is the original field.  The field on the right is the
+#the destination field, typically a field in Salesforce
+
+#the syntax for lookup fields using Salesforce's smart lookup is:
+#ORIGINAL_FIELD=SALESFORCE_FIELD__r\:EXTERNALID
+
+Status__c=Status__c
+Priority__c=Priority__c
+Case_Origin__c=Case_Origin__c
+#RecordTypeId=RecordTypeId
+#OwnerId=OwnerId
+Subject__c=Subject__c
+Description__c=Description__c

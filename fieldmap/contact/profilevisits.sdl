@@ -1,0 +1,5 @@
+Id=Contact__r:\CrowdHub_ID__c
+#should not need the following.  These values will come over with the lookup
+#First Name=FirstName
+#Last Name=LastName
+#Email=Email

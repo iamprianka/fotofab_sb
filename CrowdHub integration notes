@@ -1,0 +1,13 @@
+CrowdHub integration notes:
+
+Need an ID of some kind on the Presses tags
+added About Me field on Contact.  How long does this field need to be
+Added Time Zone field on Contact.  What values should we use?
+How should we implement Companies?  Is this like related contacts?
+How should we implement tag interests?
+Added Number of Likes field on Contact
+How should we handle Tags of Likes
+How should we handle Tags of Saves
+How should we handle List of Contacts
+How should we handle Forum Posts and child collection?
+What is the sequence that data comes through?  Accounts before Contacts?

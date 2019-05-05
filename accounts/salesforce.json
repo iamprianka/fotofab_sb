@@ -1,0 +1,14 @@
+{
+    "salesforce": {
+        "username": "dan@dealer.demo",
+        "password": "salesforce1",
+        "token": "T4sGi77fyXyDubtsPLHIc1Rb"
+    },
+    "salesforce_sandbox": {
+        "username": "",
+        "password": "",
+        "token": "",
+        "sandbox":"True"
+    }
+    
+}

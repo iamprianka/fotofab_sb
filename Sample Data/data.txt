@@ -1,0 +1,99 @@
+Account entry data dictionary:
+
+Id - int 11
+Business Name - varchar 255
+Description - text
+Email__c - varchar 4086
+Phone - varchar 4086
+Type - varchar 255
+Website - varchar 4086
+Facebook - varchar 4086
+Instagram - varchar 4086
+LinkedIn - varchar 4086
+Twitter - varchar 4086
+YouTube - varchar 4086
+Pinterest - varchar 4086
+BillingGeocodeAccuracy - varchar 4086
+BillingCity - varchar 4086
+BillingCountry - varchar 4086
+BillingLatitude - varchar 4086
+BillingLongitude - varchar 4086
+BillingState - varchar 4086
+BillingStreet - varchar 4086
+BillingPostalCode - varchar 4086
+ShippingGeocodeAccuracy - varchar 4086
+ShippingCity - varchar 4086
+ShippingCountry - varchar 4086
+ShippingLatitude - varchar 4086
+ShippingLongitude - varchar 4086
+ShippingState - varchar 4086
+ShippingStreet - varchar 4086
+ShippingPostalCode - varchar 4086
+One_Line_Description__c - varchar 100
+Organization_Type__c - varchar 255
+Profile Visits (list)
+    Id - int 11
+    First Name - varchar 128
+    Email - varchar 128
+Content Posted (list)
+    Id - int 11
+    Title - varchar 255
+    Description - text
+    File - varchar 255
+    Link - int 11
+    views - int 11
+Presses Tags (list)
+    id - int 11
+    name - varchar 255
+URL - varchar 64
+Associated Users (list)
+    Id - int 11
+    First Name - varchar 128
+    Email - varchar 128
+Category - varchar 4086
+Region - varchar 4086
+Creation Date - datetime
+Subscription Renewal Date - datetime
+
+Contacts entry data dictionary:
+
+Id - int 11
+FirstName - varchar 128
+LastName - varchar 128
+MailingStreet - varchar 255
+MailingCity - varchar 128
+MailingState - varchar 25
+MailingPostalCode - varchar 15
+MailingCountry - varchar 25
+Phone - varchar 128
+MobilePhone - varchar 32
+Email - varchar 128
+Creation Date - datetime
+Region - varchar 4096
+Language - varchar 4096
+About Me - varchar 4096
+Time Zone - varchar 4096
+Companies (list)
+    company_name - varchar 255
+    company_id - int 11
+Tag Interests (list)
+    tag_name - varchar 255
+Last Login Date datetime
+Number of Likes - int 11
+Tags of Likes (list)
+    tag_name - varchar 255
+Number of Saves - int 11
+Tags of Saves (list)
+    tag_name - varchar 255
+Number of Contacts - int 11
+List of Contacts (list)
+    Business Contacts - int 11 (list)
+    User Contacts - int 11 (list)
+Forum Posts (list)
+    id - int 11
+    title - varchar 255
+    description - text
+    file - varchar 255
+    views - int 11
+Email Opt In - varchar 5
+

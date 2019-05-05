@@ -1,0 +1,6 @@
+#this file defines the external ids by object
+Account=Id
+Associated Users=id
+Profile Visits=Id
+Content Posted=Id
+Presses Tags=id

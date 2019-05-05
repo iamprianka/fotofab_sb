@@ -1,0 +1,7 @@
+id=Crowdhub_ID__c
+title=Title__c
+description=Description__c
+file=File__c
+views=Views__c
+link=Link__c
+Contact__r=Crowdhub_ID__c

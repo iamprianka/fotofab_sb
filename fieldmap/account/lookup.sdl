@@ -1,0 +1,5 @@
+#this file defines the lookup references to the parent objects
+Associated Users=Account\:CrowdHub_Id__c
+Profile Visits=Account__r\:CrowdHub_Id__c
+Content Posted=Account__r\:CrowdHub_Id__c
+Presses Tags=Account__r\:CrowdHub_Id__c

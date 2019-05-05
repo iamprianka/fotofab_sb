@@ -1,0 +1,5 @@
+#maps the labels from the json payload to the Salesforce object
+#Presses Tags=Press__c
+#Associated Users=Contact
+#Profile Visits=Profile_Visit__c
+#Content Posted=Content_Post__c
