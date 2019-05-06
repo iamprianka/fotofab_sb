@@ -1,0 +1,18 @@
+{
+    "sf_sb": {
+        "salesforce": {
+            "username": "solomo@fotofab.com.insp",
+            "password": "salesforce2",
+            "token": "blWWiTqZKGXQAMfbvG38kdsW",
+            "sandbox":"True"
+        }
+    },
+    "foto_appl": {
+        "endpoint": {
+            "username":"api_user",
+            "password":"Z3Rskvj5nT0c4hkn"
+        }
+    }
+
+    
+}

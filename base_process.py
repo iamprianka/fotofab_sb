@@ -15,7 +15,7 @@ def exec_job(config):
 
     
     #Get the accounts required for the job
-    if 'salesforce' in config['accounts']:
+    """if 'salesforce' in config['accounts']:
         cur_dir = os.path.dirname(os.path.abspath(__file__))
         filename = "{0}/accounts/{1}".format(cur_dir, 'salesforce.json')
         with open(filename) as json_data:
@@ -29,10 +29,32 @@ def exec_job(config):
         sf = accounts.salesforce(sf_account)
         app_accounts = dict([('salesforce', sf)])
 
+    if 'appliance' in config['accounts']:
+        cur_dir = os.path.dirname(os.path.abspath(__file__))
+        filename = "{0}/accounts/{1}".format(cur_dir, 'appliance.json')
+        with open(filename) as json_data:
+            appliance_accounts = load(json_data)
+
+                    
+        if config['sandbox'] == 'True':
+            sf_account = sf_accounts['salesforce_sandbox']
+        else:
+            sf_account = sf_accounts['salesforce']    
+        sf_account['sandbox'] = config['sandbox']
+        sf = accounts.salesforce(sf_account)
+        app_accounts = dict([('salesforce', sf)])"""
+
+    cur_dir = os.path.dirname(os.path.abspath(__file__))
+    filename = "{0}/accounts/{1}".format(cur_dir, 'accounts.json')
+    with open(filename) as json_data:
+        accounts = load(json_data)
+
+    for account in config['accounts']:
+        app_accounts = dict([(account, accounts[account])])
+
     for instruction in config['instructions'].keys():
-
-        results = getattr(instructions, instruction)(config['instructions'][instruction], app.config, app_accounts, results=None)
-
+        results = getattr(instructions, instruction)(config['instructions'][instruction], app.config, app_accounts)
+    
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:

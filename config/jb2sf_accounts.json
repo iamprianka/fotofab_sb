@@ -1,0 +1,42 @@
+{
+    "job_header":{
+        "title":"JobBoss to Salesforce",
+        "version":"1.0",
+        "description":"This job pulls accounts from JobBoss and updates in Salesforce",
+        "change_history": {
+            "change": {
+                "date":"05/05/2019",
+                "change":"initial setup"
+            }
+        }
+    },
+    "accounts": ["sf_sb", "foto_appl"],
+    "fieldmap":"",
+    "query":"",
+    "sobject": {
+        "name":"Account",
+        "operation":"query",
+        "key":""
+    },
+    "rules": {
+    },
+    "instructions": {
+
+        "endpoint": {
+            "account":"foto_appl",
+            "url":"https://50.79.28.57/api/v1.0/accounts/accounts"
+
+        }
+    },
+    "logic_rules": {
+    },
+    "init": {
+        "recordtype":false
+    },
+    "dry-run": false,
+    "show-batch": false,
+    "show-response": false,
+    "limit":1000,
+    "offset":0,
+    "sandbox":"False"
+}
