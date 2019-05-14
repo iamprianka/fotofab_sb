@@ -1,9 +1,10 @@
 ##THIS APP IS USED TO PROCESS SCHEDULED JOBS##
 import sys
 import os, importlib
-from flask import Flask, render_template, request, abort, jsonify, current_app as app
-from SolomoLib import Support as support, Util as util, accounts, instructions
+from flask import Flask, request, jsonify, current_app as app
+from SolomoLib import Support as support, Util as util, Accounts, instructions
 from json import dumps, loads, load
+from collections import OrderedDict
 
 
 def exec_job(config):
@@ -13,49 +14,22 @@ def exec_job(config):
 
     app_accounts = {}
 
-    
-    #Get the accounts required for the job
-    """if 'salesforce' in config['accounts']:
-        cur_dir = os.path.dirname(os.path.abspath(__file__))
-        filename = "{0}/accounts/{1}".format(cur_dir, 'salesforce.json')
-        with open(filename) as json_data:
-            sf_accounts = load(json_data)
-            
-        if config['sandbox'] == 'True':
-            sf_account = sf_accounts['salesforce_sandbox']
-        else:
-            sf_account = sf_accounts['salesforce']    
-        sf_account['sandbox'] = config['sandbox']
-        sf = accounts.salesforce(sf_account)
-        app_accounts = dict([('salesforce', sf)])
-
-    if 'appliance' in config['accounts']:
-        cur_dir = os.path.dirname(os.path.abspath(__file__))
-        filename = "{0}/accounts/{1}".format(cur_dir, 'appliance.json')
-        with open(filename) as json_data:
-            appliance_accounts = load(json_data)
-
-                    
-        if config['sandbox'] == 'True':
-            sf_account = sf_accounts['salesforce_sandbox']
-        else:
-            sf_account = sf_accounts['salesforce']    
-        sf_account['sandbox'] = config['sandbox']
-        sf = accounts.salesforce(sf_account)
-        app_accounts = dict([('salesforce', sf)])"""
-
     cur_dir = os.path.dirname(os.path.abspath(__file__))
     filename = "{0}/accounts/{1}".format(cur_dir, 'accounts.json')
-    with open(filename) as json_data:
-        accounts = load(json_data)
+    """with open(filename) as json_data:
+        accounts = load(json_data)"""
+        
+    accounts = load(open(filename), object_pairs_hook=OrderedDict)
 
-    for account in config['accounts']:
-        app_accounts = dict([(account, accounts[account])])
+    service_accounts = []
+    service_accounts = Accounts.load_accounts(accounts)
 
-    for instruction in config['instructions'].keys():
-        results = getattr(instructions, instruction)(config['instructions'][instruction], app.config, app_accounts)
-    
-
+    results = {}
+    for order in config['instructions'].keys():
+        instruction = next(iter(config['instructions'][order]))
+        print('@@@@ {}'.format(order))
+        results = getattr(instructions, instruction)(config['instructions'][order][next(iter(config['instructions'][order]))], app.config, service_accounts, results)
+        
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         config_names = sys.argv[1].split(',')
@@ -66,10 +40,10 @@ if __name__ == "__main__":
             config_data = None
 
             filename = "{0}/config/{1}".format(cur_dir, config_name)
-            print('@@@CUR DIR {}'.format(filename))
-            with open(filename) as json_data:
+            config_data = load(open(filename), object_pairs_hook=OrderedDict)
+            #with open(filename) as json_data:
                 #print(load(json_data))
-                config_data = load(json_data)
+            #config_data = load(json_data)
 
             if config_data is not None:
                 exec_job(config_data)

@@ -5,7 +5,8 @@ from simple_salesforce import Salesforce
 def load_configuration(fileName):
     fieldMap = {}
     fieldList = []
-    fileName = app.config['FIELD_MAP_DIR']+fileName
+    
+    fileName = './fieldmap/'+fileName
     with open(fileName, "r") as config_data:
         for line in config_data:
             line = line.strip()

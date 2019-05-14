@@ -1,0 +1,21 @@
+Customer_ID__c=Customer_ID__c
+##need to define the mapping
+#Sales_Rep=User\:JobBoss_ID__c
+#map the p/l values--see card in jira
+#Terms__c=Terms__c
+#map the p/l values--see card in jira
+#Ship_Via__c=Ship_Via__c
+#map the p/l values--see card in jira
+#Sales_Code__c=Sales_Code__c
+#map the p/l values--see card in jira
+#Tax_Code__c=Tax_Code__c
+Name=Name
+Account_Status__c=Account_Status__c
+Ship_Lead_Days__c=Ship_Lead_Days__c
+Print_Statement__c=Print_Statement__c
+Credit_Limit__c=Credit_Limit__c
+Customer_Since__c=Customer_Since_Date__c
+Accept_BO__c=Accepts_Backorders__c
+Note_Text__c=Account_Notes__c
+Last_Updated__c=Last_Updated__c
+Tax_ID__c=Tax_ID__c

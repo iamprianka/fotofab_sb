@@ -13,21 +13,22 @@ class Generic(object):
     def get_username(self):
         return self.username
 
-    def GetEndPoint(self, debug=False):
+    def GetEndPoint(self, limit=10, offset=0, debug=False):
         userid = 0
         headers = {
-            'content-type': "application/json",
             'accept': "application/json",
         }
-
-        complete_url = self.base_url + self.uri
+        print('LIMIT {} - OFFSET {}'.format(limit, offset))
+        complete_url =  "{}{}?limit={}&offset={}".format(self.base_url, self.uri,limit, offset)
+        
         print(complete_url)
-        print('{} - {}'.format(self.username, self.password))
-        exit(0)
-        r = requests.get(self.base_url, auth=(self.username, self.password) )
+
+        r = requests.get(complete_url,verify=False)
         
         if debug is True:
             print('Results: {}'.format(r.text))
+        """if len(json.loads(r.text)['data']) == 0:
+            return None"""
         return r.text
 
     def GenericEndPoint(self, payload, debug=False):
@@ -38,10 +39,10 @@ class Generic(object):
         }
 
         complete_url = self.base_url + self.uri
-        if self.token_required is True:
-            r = requests.post(complete_url, data=payload, headers=headers, auth=(self.username, self.password) )
-        elif self.token_required is False: 
-            r = requests.post(complete_url, data=payload, headers=headers)
+        #if self.token_required is True:
+        r = requests.post(complete_url, data=payload, headers=headers, auth=(self.username, self.password) )
+        """elif self.token_required is False: 
+            r = requests.post(complete_url, data=payload, headers=headers)"""
         if debug is True:
             print('Results: {}'.format(r.text))
         return r.text

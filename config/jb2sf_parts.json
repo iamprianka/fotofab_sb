@@ -1,0 +1,57 @@
+{
+    "job_header":{
+        "title":"JobBoss to Salesforce-Parts",
+        "version":"1.0",
+        "description":"This job pulls parts from JobBoss and updates in Salesforce",
+        "change_history": {
+            "change": {
+                "date":"05/07/2019",
+                "change":"initial setup"
+            }
+        }
+    },
+    "accounts": ["sf_sb", "foto_appl"],
+    "instructions": {
+        "step1": {
+            "endpoint": {
+                "account":"foto_appl",
+                "url":"https://50.79.28.57/api/v1.0/accounts/parts",
+                "limit":2000,
+                "offset":0,
+                "batch-size":2000,
+                "sub": {
+                    "sub1": {
+                        "iterate": {
+                            "fieldmap":"partsfieldmap.sdl",
+                            "type":"salesforce",
+                            "rules" :{
+                        
+                            }
+                        }
+                    },
+                    "sub2": {
+                        "salesforce_action": {
+                            "account":"sf_sb",
+                            "action":"upsert",
+                            "sobject":"Part__c",
+                            "key":"Part_Number__c"
+                        }
+                    }
+               }
+            }
+  
+        }
+
+    },
+    "logic_rules": {
+    },
+    "init": {
+        "recordtype":false
+    },
+    "dry-run": false,
+    "show-batch": false,
+    "show-response": false,
+    "limit":1000,
+    "offset":0,
+    "sandbox":"False"
+}

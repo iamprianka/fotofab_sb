@@ -1,0 +1,54 @@
+{
+    "job_header":{
+        "title":"JobBoss to Salesforce-Accounts",
+        "version":"1.0",
+        "description":"This job pulls accounts from JobBoss and updates in Salesforce",
+        "change_history": {
+            "change": {
+                "date":"05/12/2019",
+                "change":"initial setup"
+            }
+        }
+    },
+    "accounts": ["sf_sb", "foto_appl"],
+    "instructions": {
+        "step1": {
+            "endpoint": {
+                "account":"foto_appl",
+                "url":"https://50.79.28.57/api/v1.0/accounts/accounts",
+                "limit":2000,
+                "offset":0,
+                "batch-size":2000,
+                "sub": {
+                    "sub1": {
+                        "iterate": {
+                            "fieldmap":"accountsfieldmap.sdl",
+                            "type":"salesforce",
+                            "rules" :{
+                        
+                            }
+                        }
+                    },
+                    "sub2": {
+                        "salesforce_action": {
+                            "account":"sf_sb",
+                            "action":"upsert",
+                            "sobject":"Account",
+                            "key":"Customer_ID__c"
+                        }
+                    }
+               }
+            }
+  
+        }
+
+    },
+    "logic_rules": {
+    },
+    "init": {
+        "recordtype":false
+    },
+    "dry-run": false,
+    "show-batch": false,
+    "show-response": false
+}

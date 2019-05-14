@@ -24,7 +24,9 @@
 
         "endpoint": {
             "account":"foto_appl",
-            "url":"https://50.79.28.57/api/v1.0/accounts/accounts"
+            "url":"https://50.79.28.57/api/v1.0/accounts/accounts",
+            "limit":2000,
+            "offset":0
 
         }
     },
