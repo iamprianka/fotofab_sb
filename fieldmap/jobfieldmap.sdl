@@ -8,7 +8,7 @@ Part_Number__c=Related_Part__c
 #Rev__c
 Order_Date__c=Order_Date__c
 Description__c=Description__c
-#JobBoss_Status__c
+#JobBoss_Status__c=Status__c
 JobBoss_Status__c=JobBoss_Status__c
 Customer_PO__c=Customer_PO__c
 Shipped_Quantity__c=Shipped_Quantity__c
